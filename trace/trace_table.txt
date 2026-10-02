@@ -1,0 +1,42 @@
+SEARCH TRACE TABLE
+
+
+ Song ID  Hashing Positions       Hash Comparisons     Linear Search Comparisons
+
+ 105      5                       1                    1                        
+ 210      0                       1                    2                        
+ 315      5 -> 6                  2                    3                        
+ 420      0 -> 1                  2                    4                        
+ 525      5 -> 6 -> 7             3                    5                        
+ 630      0 -> 1 -> 2             3                    6               
+ 735      5 -> 6 -> 7 -> 8        4                    7                        |
+ 840      0 -> 1 -> 2 -> 3        4                    8                        
+
+
+Total Hashing Comparisons = 20
+Average Hashing Comparisons = 2.50
+
+Total Linear Search Comparisons = 36
+Average Linear Search Comparisons = 4.50
+
+
+TRACE TABLE - HASH TABLE INSERTION
+
+Hash Function: h(k) = k % 10
+Table Size: 10
+Collision Resolution: Linear Probing
+
+
+ Step  Song ID  Hash Calculation  Initial Index  Positions Checked          Final Index  Collisions 
+
+  1    105      105 % 10 = 5      5              5                          5            0          
+  2    210      210 % 10 = 0      0              0                          0            0          
+  3    315      315 % 10 = 5      5              5 -> 6                     6            1          
+  4    420      420 % 10 = 0      0              0 -> 1                     1            1          
+  5    525      525 % 10 = 5      5              5 -> 6 -> 7                7            2          
+  6    630      630 % 10 = 0      0              0 -> 1 -> 2                2            2          
+  7    735      735 % 10 = 5      5              5 -> 6 -> 7 -> 8           8            3          
+  8    840      840 % 10 = 0      0              0 -> 1 -> 2 -> 3           3            3          
+
+
+Total Collisions = 12
