@@ -1,0 +1,65 @@
+============================================
+       MUSIC SONG ID HASHING SYSTEM
+============================================
+
+Hash Function: h(k) = k % 10
+Collision Resolution: Linear Probing
+Table Size: 10
+
+------------- INSERTION -------------------
+Insert 105: Hash Index = 5, Final Index = 5, Collisions = 0
+Table: - - - - - 105 - - - -
+Insert 210: Hash Index = 0, Final Index = 0, Collisions = 0
+Table: 210 - - - - 105 - - - -
+Insert 315: Hash Index = 5, Final Index = 6, Collisions = 1
+Table: 210 - - - - 105 315 - - -
+Insert 420: Hash Index = 0, Final Index = 1, Collisions = 1
+Table: 210 420 - - - 105 315 - - -
+Insert 525: Hash Index = 5, Final Index = 7, Collisions = 2
+Table: 210 420 - - - 105 315 525 - -
+Insert 630: Hash Index = 0, Final Index = 2, Collisions = 2
+Table: 210 420 630 - - 105 315 525 - -
+Insert 735: Hash Index = 5, Final Index = 8, Collisions = 3
+Table: 210 420 630 - - 105 315 525 735 -
+Insert 840: Hash Index = 0, Final Index = 3, Collisions = 3
+Table: 210 420 630 840 - 105 315 525 735 -
+
+------------- FINAL HASH TABLE ------------
+Index 0 : 210
+Index 1 : 420
+Index 2 : 630
+Index 3 : 840
+Index 4 : -
+Index 5 : 105
+Index 6 : 315
+Index 7 : 525
+Index 8 : 735
+Index 9 : -
+
+------------- HASHING SEARCH ---------------
+105 -> Index 5, Comparisons = 1
+210 -> Index 0, Comparisons = 1
+315 -> Index 6, Comparisons = 2
+420 -> Index 1, Comparisons = 2
+525 -> Index 7, Comparisons = 3
+630 -> Index 2, Comparisons = 3
+735 -> Index 8, Comparisons = 4
+840 -> Index 3, Comparisons = 4
+
+------------- LINEAR SEARCH ----------------
+105 -> Position 0, Comparisons = 1
+210 -> Position 1, Comparisons = 2
+315 -> Position 2, Comparisons = 3
+420 -> Position 3, Comparisons = 4
+525 -> Position 4, Comparisons = 5
+630 -> Position 5, Comparisons = 6
+735 -> Position 6, Comparisons = 7
+840 -> Position 7, Comparisons = 8
+
+------------- PERFORMANCE ------------------
+Total Hashing Comparisons = 20
+Average Hashing Comparisons = 2.50
+Total Linear Search Comparisons = 36
+Average Linear Search Comparisons = 4.50
+
+Load Factor = 8 / 10 = 0.80
