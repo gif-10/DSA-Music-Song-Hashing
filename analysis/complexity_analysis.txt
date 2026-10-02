@@ -1,0 +1,85 @@
+COMPLEXITY ANALYSIS
+
+1. HASHING WITH LINEAR PROBING
+
+Insertion:
+Best Case: O(1)
+Average Case: O(1)
+Worst Case: O(n)
+
+Search:
+Best Case: O(1)
+Average Case: O(1)
+Worst Case: O(n)
+
+Space Complexity: O(m)
+
+For this program:
+Table size (m) = 10
+Number of song IDs (n) = 8
+Load Factor = n/m = 8/10 = 0.80
+
+
+2. LINEAR SEARCH
+
+Search:
+Best Case: O(1)
+Average Case: O(n)
+Worst Case: O(n)
+
+Space Complexity: O(1)
+
+
+3. OBSERVED PERFORMANCE
+
+Total Hashing Comparisons = 20
+Average Hashing Comparisons = 2.50
+
+Total Linear Search Comparisons = 36
+Average Linear Search Comparisons = 4.50
+
+Total Collisions = 12
+Load Factor = 0.80
+
+
+4. COMPARISON
+
+Hashing required fewer comparisons than linear search
+for the given song IDs.
+
+Hashing Average Comparisons = 2.50
+Linear Search Average Comparisons = 4.50
+
+Therefore, hashing provided faster searching for this
+particular input.
+
+Theoretical average search complexity of hashing is O(1)
+when collisions are controlled, while linear search has
+average complexity O(n).
+
+
+5. EFFECT OF COLLISIONS
+
+Collisions occurred because multiple song IDs produced
+the same hash index.
+
+The IDs 105, 315, 525 and 735 produced index 5.
+
+The IDs 210, 420, 630 and 840 produced index 0.
+
+Linear probing was used to find the next available
+position. As more collisions occurred, more positions
+had to be checked.
+
+
+6. FINAL CONCLUSION
+
+Hashing with linear probing is suitable for the music
+application when frequent song-ID searching is required.
+
+For the given data, hashing required an average of 2.50
+comparisons, while linear search required 4.50 comparisons.
+
+However, the load factor of 0.80 caused several collisions.
+A suitable table size and hash function can reduce
+collisions and improve search performance.
